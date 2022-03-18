@@ -19,18 +19,17 @@ public class Ejecutor {
     static Scanner sc = new Scanner(System.in);
     static Alumno alumno;
     public static void main(String[] args) {
-        int eleccion;
+        
         boolean salir = false;
         
         System.out.println("****TODOS LOS ELEMENTOS SERÁN AÑADIDOS AL FINAL DE LA LISTA****");
         while (!salir){
-        System.out.println("\n\nSeleccione que desea realizar");
-        System.out.println("1. Agregar un nuevo alumno");
-        System.out.println("2. Buscar un alumno");
-        System.out.println("3. Eliminar un alumno");
-        System.out.println("4. Mostrar la lista de alumnos");
-        System.out.println("5. Salir");
-        eleccion = sc.nextInt();
+            
+        JOptionPane.showMessageDialog(null, "Seleccione lo que desea hacer");
+        String Eleccion = JOptionPane.showInputDialog(null, "1. Añadir un nuevo alumno \n2. Buscar un alumno"
+                + "\n3. Eliminar un alumno\n4.Mostrar el listado de alumnos\n5.Salir");
+        int eleccion = Integer.parseInt(Eleccion);
+        
         switch(eleccion){
             case 1: añadir();
                 JOptionPane.showMessageDialog(null, "Alumno Registrado");
@@ -49,7 +48,7 @@ public class Ejecutor {
                 break;
             case 5: salir = true;
                 break;
-            case 6: default: System.out.println("La opción que seleccionó no existe");
+            case 6: default: JOptionPane.showMessageDialog(null, "La opción que seleccionó no existe, seleccione otra");
                 break;
         }
         }
