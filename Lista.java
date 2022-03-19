@@ -52,15 +52,17 @@ public class Lista {
         }
     }
     public void mostrarLista(){
-        
+        int contador = 1;
         if (estaVacia()){
-            System.out.println("La lista está vacía");
+            JOptionPane.showMessageDialog(null, "La lista está vacía");
+            return;
         }else{
             Nodo aux;
             aux = inicio;
             while(aux!=null){
-                System.out.println(aux.getAlumno().toString());
+                System.out.println(contador + ". " + aux.getAlumno().toString());
                 aux = aux.getSiguiente();
+                contador = contador +1;
             }
         }
         
@@ -87,24 +89,23 @@ public class Lista {
             JOptionPane.showMessageDialog(null, "La lista está vacía");
             return;
         } else{
-            if(inicio == fin && Carne2 == inicio.getAlumno().getCarne()){
+            if(inicio == fin && Carne2 == inicio.alumno.getCarne()){
                 inicio = fin = null;
-            } else if(inicio.getAlumno().getCarne() == Carne2){
+            } else if(Carne2 == inicio.alumno.getCarne()){
                 inicio = inicio.siguiente;
             } else{
                 Nodo anterior, temporal;
                 anterior = inicio;
                 temporal = inicio.siguiente;
                 
-                while(temporal != null && temporal.getAlumno().getCarne() == Carne2){
+                while(temporal != null && Carne2 != temporal.alumno.getCarne() ){
                     anterior = anterior.siguiente;
                     temporal = temporal.siguiente;
                 }
-                
                 if (temporal!= null){
                     anterior.siguiente = temporal.siguiente;
                     if(temporal == fin){
-                        fin = anterior;
+                        this.fin = anterior;
                     }
                 }
             }

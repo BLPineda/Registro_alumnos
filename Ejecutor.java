@@ -22,7 +22,6 @@ public class Ejecutor {
         
         boolean salir = false;
         
-        System.out.println("****TODOS LOS ELEMENTOS SERÁN AÑADIDOS AL FINAL DE LA LISTA****");
         while (!salir){
             
         JOptionPane.showMessageDialog(null, "Seleccione lo que desea hacer");
@@ -44,7 +43,9 @@ public class Ejecutor {
                 int CarneEliminar = Integer.parseInt(Carne2);
                 lista.EliminarAlumno(CarneEliminar);
                 break;
-            case 4: lista.mostrarLista();
+            case 4: 
+                System.out.println("------------------------------------------------------");
+                lista.mostrarLista();
                 break;
             case 5: salir = true;
                 break;

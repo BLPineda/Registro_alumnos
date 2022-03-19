@@ -23,7 +23,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno: " + nombre + " " + apellido + ", email: " + email + ", carné: " + carne;
+        return "Nombre: " + nombre + " " + apellido + ", email: " + email + ", carné: " + carne;
     }
 
     public Alumno() {
